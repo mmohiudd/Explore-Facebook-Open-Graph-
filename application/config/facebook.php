@@ -28,8 +28,8 @@ return array(
 		
 	// DEVELOPMENT ENVIRONMENT
 	Kohana::DEVELOPMENT => array(
-                'app_id'                    => '310198805698576',
-                'secret'                    => '18c9e8c0a0221f2435275aeadb8201c4',
+                'app_id'                    => '',
+                'secret'                    => '',
                 'file_upload'               => false,
                 'canvas_path'               => '',
                 'page_path'                 => '',
@@ -56,8 +56,8 @@ return array(
 
 	// PRODUCTION ENVIRONMENT
 	Kohana::PRODUCTION => array(
-                'app_id'                    => '',
-                'secret'                    => '',
+                'app_id'                    => '310198805698576',
+                'secret'                    => '18c9e8c0a0221f2435275aeadb8201c4',
                 'file_upload'               => false,
                 'canvas_path'               => '',
                 'page_path'                 => '',
