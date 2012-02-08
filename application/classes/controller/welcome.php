@@ -56,33 +56,16 @@ class Controller_Welcome extends Controller_Grandma_Base{
 
 			
 		} catch(Exception $e) {
-			
-			$access_token = $this->facebook->getAccessToken();
-			
-			//$access_token = $this->facebook->getCode();
-			//echo $access_token . "<Br><Br>";
-			
-			$sigend_request = $this->facebook->getSignedRequest();
-			
-			echo "<pre>"; print_r($sigend_request); echo "</pre>";
-			
-			//echo "<pre>"; print_r($_REQUEST); echo "</pre>";
-			/*
 			$view = View::factory('welcome/index');
-			
 			
 			$login_url = $this->facebook->getLoginUrl();
 			$view->bind('login_url', $login_url);
-			
-			echo $this->facebook->get_login_url() . "<br><br>";
-			
-			echo "<pre>"; print_r($view); echo "</pre>";
 			
 			// Render the view
 			$page = $view->render()	;
 			
 			$this->response->body($page);
-			*/
+			
 		}
 		
 		//echo "<pre>"; print_r($signed_request); echo "</pre>";
