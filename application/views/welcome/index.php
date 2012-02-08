@@ -29,7 +29,7 @@
 		</header>
 	
 		<section id="ctas">
-			
+			<a href="<?php echo $login_url?>">Login to Facebook</a>
 		</section>
 		
 		<footer>
