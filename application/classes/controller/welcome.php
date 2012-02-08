@@ -38,7 +38,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 		try{
 			$fb_user = $this->facebook->me();
 			
-			
+			echo "<pre>"; print_r($fb_user); echo "</pre>";
 		} catch(Exception $e) {
 			echo $e;
 			
