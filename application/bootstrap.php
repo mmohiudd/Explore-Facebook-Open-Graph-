@@ -79,8 +79,14 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  profile     enable or disable internal profiling               TRUE
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
+
+// Set the URL protocol
+$protocol = (isset($_SERVER['HTTPS']) AND $_SERVER['HTTPS'] == 'on') ? 'https' : 'http';
+
 Kohana::init(array(
-	'base_url'   => '/',
+	'base_url'	 => $protocol .'://' . $_SERVER['HTTP_HOST'] . str_replace('/index.php', '', $_SERVER['SCRIPT_NAME']),
+	'index_file' 	=> false,
+	'charset'	=> 'utf-8',
 ));
 
 /**
@@ -100,12 +106,16 @@ Kohana::modules(array(
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
+	'database'   => MODPATH.'database',   // Database access
 	// 'image'      => MODPATH.'image',      // Image manipulation
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+	'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+	'grandma'    => MODPATH.'grandma',  // grandma makes life with Facebook easier
 	));
+
+
+
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
