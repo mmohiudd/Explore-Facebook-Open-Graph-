@@ -61,6 +61,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			
 			echo $access_token . "<Br><Br>";
 			
+			echo $access_token . "<Br><Br>";
 			
 			//$access_token = $this->facebook->getCode();
 			//echo $access_token . "<Br><Br>";
