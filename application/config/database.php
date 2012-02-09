@@ -61,9 +61,9 @@ return array(
 		'type' => 'mysql',
 		'connection'   => array(
 			'hostname'   => 'localhost',
-			'username'   => '',
-			'password'   => '',
-			'database'   => ''
+			'username'   => 'root',
+			'password'   => 'n1FhasHFODRtbK',
+			'database'   => 'efog'
 		),
 		'table_prefix' => '',
 		'charset'      => 'utf8',
