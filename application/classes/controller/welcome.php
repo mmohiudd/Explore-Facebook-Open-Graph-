@@ -20,11 +20,11 @@ class Controller_Welcome extends Controller_Grandma_Base{
 					"relative_url"=> "me"
 				),
 				
-				
+				/*
 				array(
 					"method"=> "GET",
 					"relative_url"=> "me/feed"
-				),
+				),*/
 			);		
 
 			$results = $this->facebook->api_batch($batch_data);
@@ -37,6 +37,8 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			$fb_users->last_name = $me['last_name'];
 			
 			$fb_users->save();
+			
+			echo "<pre>"; print_r($results); echo "</pre>";
 			
 		} catch(Exception $e) {
 
