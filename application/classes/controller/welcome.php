@@ -7,12 +7,14 @@ class Controller_Welcome extends Controller_Grandma_Base{
 	
 	public function action_index() {
 		$facebook_config = Kohana::$config->load('facebook')->{Kohana::$environment};
+		$fb_user = $this->facebook->me();
 		
 		try{
 			// load model 
-			
 			$fb_users = ORM::factory("fb_users");
 			$fb_feeds = ORM::factory("fb_feeds");
+			
+			
 			
 			$batch_data = array(
 				array(
@@ -32,16 +34,18 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			// save the user data
 			$me = $results[0];
 			
-			$fb_users->fb_uid = $me['id'];
-			$fb_users->first_name = $me['first_name'];
-			$fb_users->last_name = $me['last_name'];
+			if(!$fb_users->where('fb_uid', '=', $me['id'])->find_all()) {
+				$fb_users->fb_uid = $me['id'];
+				$fb_users->first_name = $me['first_name'];
+				$fb_users->last_name = $me['last_name'];
+				
+				$fb_users->save();
+			}
 			
-			$fb_users->save();
-			
-			echo "<pre>"; print_r($results); echo "</pre>";
+			$view = View::factory('welcome/graph');
 			
 		} catch(Exception $e) {
-
+			echo $e . "<br>";	
 			$view = View::factory('welcome/index');
 			
 			$login_url = $this->facebook->getLoginUrl() . "&scope=" . implode(",", $facebook_config['permissions']);
