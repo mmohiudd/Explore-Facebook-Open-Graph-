@@ -40,7 +40,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 				
 				array(
 					"method"=> "GET",
-					"relative_url"=> "me/feed/?limit=5000"
+					"relative_url"=> "me/feed/?limit=100"
 				),
 			);		
 
@@ -59,6 +59,9 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			
 			// save the feed data
 			$feeds = $results[1]['data'];
+			
+			echo "<pre>"; print_r(); echo "</pre>";
+			exit(0);
 			
 			foreach($feeds as $feed) {
 				$this->fb_feeds = ORM::factory("fb_feeds");
