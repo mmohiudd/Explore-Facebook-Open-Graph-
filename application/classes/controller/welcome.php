@@ -99,7 +99,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 				unset($this->fb_feeds);
 			}
 			
-			exit();
+			
 			$view = View::factory('welcome/thankyou');
 			
 			$graph_url = url::site("welcome/graph");
@@ -108,7 +108,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			// Render the view
 			$page = $view->render()	;
 			
-			$this->response->body($page);
+			//$this->response->body($page);
 			
 			
 		} catch(Exception $e) {
