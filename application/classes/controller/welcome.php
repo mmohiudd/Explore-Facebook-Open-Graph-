@@ -62,7 +62,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			
 			foreach($feeds as $feed) {
 				$this->fb_feeds = ORM::factory("fb_feeds");
-				if($this->fb_feeds->where('id', '=', $feed['id'])->find()) { 
+				//if($this->fb_feeds->where('id', '=', $feed['id'])->find()) { 
 					$this->fb_feeds->id = $feed['id'];
 					$this->fb_feeds->fb_uid = $me['id'];
 					$this->fb_feeds->from = !empty($feed['from']) ? json_encode($feed['from']) : '';
@@ -78,15 +78,16 @@ class Controller_Welcome extends Controller_Grandma_Base{
 					// check and set videos here
 					if(!empty($feed['story_tags']['54'])){
 						foreach($feed['story_tags']['54'] as $video) {
+							echo "<pre>"; print_r($video); echo "</pre>";
 							$this->fb_videos = ORM::factory("fb_videos");
-							if($this->fb_videos->where('id', '=', $video['id'])->find()) { // if video not already there
+							//if($this->fb_videos->where('id', '=', $video['id'])->find()) { // if video not already there
 								$this->fb_videos->id = $video['id'];
 								$this->fb_videos->name = $video['name'];
 								$this->fb_videos->count = 1;
 
-							} else{ // video already present, update count
+							//} else{ // video already present, update count
 								$this->fb_videos->count += 1;
-							}	
+							//}	
 							
 							$this->fb_videos->save();
 							
@@ -94,7 +95,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 						}		
 					}
 					
-				}
+				//}
 				unset($this->fb_feeds);
 			}
 			
