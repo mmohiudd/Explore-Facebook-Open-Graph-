@@ -10,6 +10,5 @@
  */
 
 class Model_Fb_Videos extends ORM {
-	protected $_table_name = 'fb_videos
-	';
+	protected $_table_name = 'fb_videos';
 }
