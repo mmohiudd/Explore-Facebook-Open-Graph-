@@ -113,9 +113,9 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			
 			
 		} catch(Exception $e) {
-			
+			echo "<!-- ";
 			echo $e;
-			
+			echo " -->";
 
 			$view = View::factory('welcome/index');
 			
