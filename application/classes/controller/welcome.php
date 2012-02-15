@@ -60,7 +60,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			// save the feed data
 			$feeds = $results[1]['data'];
 			
-			echo "<pre>"; print_r(); echo "</pre>";
+			echo "<pre>"; print_r($feeds); echo "</pre>";
 			exit(0);
 			
 			foreach($feeds as $feed) {
