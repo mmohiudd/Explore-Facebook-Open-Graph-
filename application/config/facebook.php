@@ -21,7 +21,7 @@ return array(
                 'page_path'                 => '',
                 'page_url'                  => '',
                 'page_id'                   => '',	
-                'permissions'               => array('user_groups', 'user_interests','user_likes', 'read_stream', 'user_actions.app_soundcloud'),
+                'permissions'               => array('user_groups', 'user_interests','user_likes', 'read_stream', 'user_actions:app_soundcloud'),
                 'ignore_ssl_verification'   => true,
                 'cookie'                    => true
 	),
@@ -63,7 +63,7 @@ return array(
                 'page_path'                 => '',
                 'page_url'                  => '',
                 'page_id'                   => '',	
-                'permissions'               => array('user_groups', 'user_interests','user_likes', 'read_stream', 'user_actions.app_soundcloud'),
+                'permissions'               => array('user_groups', 'user_interests','user_likes', 'read_stream', 'user_actions:app_soundcloud'),
                 'ignore_ssl_verification'   => true,
                 'cookie'                    => true
 	),
