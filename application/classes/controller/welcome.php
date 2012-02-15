@@ -78,7 +78,6 @@ class Controller_Welcome extends Controller_Grandma_Base{
 					// check and set videos here
 					if(!empty($feed['story_tags']['54'])){
 						foreach($feed['story_tags']['54'] as $video) {
-							echo "<pre>"; print_r($video); echo "</pre>";
 							$this->fb_videos = ORM::factory("fb_videos");
 							if($this->fb_videos->where('id', '=', $video['id'])->find()) { // if video not already there
 								$this->fb_videos->id = $video['id'];
@@ -108,7 +107,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			// Render the view
 			$page = $view->render()	;
 			
-			//$this->response->body($page);
+			$this->response->body($page);
 			
 			
 		} catch(Exception $e) {
