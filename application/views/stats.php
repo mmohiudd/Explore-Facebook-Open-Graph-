@@ -33,8 +33,12 @@
 			<h1>Total Netflix users: <?php echo $total_netflix_users?></h1>
 			<h1>Last movie(s) watched:<br>
 			<?php
-			for($i=0;$i<5; $i++) {
-				echo $last_movies_watched[$i]['name'] . "<br>";
+			$i=0;
+			foreach($last_movies_watched as $move) {
+				echo $movie['name'] . "<br>";
+				if(++$i==5){
+					break;	
+				}
 			}
 			?>
 			</h1>
