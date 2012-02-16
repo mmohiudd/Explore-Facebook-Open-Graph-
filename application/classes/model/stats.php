@@ -46,7 +46,10 @@ class Model_Stats extends Model_Database {
 	
 	
 	public function most_popular_video() {
-		$query = DB::select(DB::expr("COUNT(DISTINCT fb_uid) AS c, id, fb_id, fb_uid, name"))->from('fb_videos')->group_by('fb_uid')->order_by('c', "DESC");
+		$query = DB::select(DB::expr("COUNT(name) AS c, id, fb_id, fb_uid, name"))->from('fb_videos')
+		->where("fb_id", "!=", "fb_uid")
+		->and_where("name", "!=", "Netflix")
+		->group_by('fb_uid')->order_by('c', "DESC");
 		
 		$results = $query->execute($this->_db);
 		
