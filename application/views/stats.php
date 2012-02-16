@@ -31,10 +31,12 @@
 		<section id="ctas">
 			<p>
 				<h1>Total auths: <?php echo $total_auths?></h1>
+				<br />
 			</p>
 			
 			<p>	
 				<h1>Total Netflix users: <?php echo $total_netflix_users?></h1>
+				<br />
 			</p>
 			
 			<p>
@@ -51,6 +53,7 @@
 					?>
 					</ul>
 				</h1>
+				<br />
 			</p>
 			
 			<p>
@@ -63,6 +66,7 @@
 					?>
 					</ol>
 				</h1>
+				<br />
 			</p>
 		</section>
 		
