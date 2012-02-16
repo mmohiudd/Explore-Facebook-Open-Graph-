@@ -49,11 +49,13 @@ class Model_Stats extends Model_Database {
 		$query = DB::select(DB::expr("COUNT(name) AS c, id, fb_id, fb_uid, name"))->from('fb_videos')
 		->where("fb_id", "!=", "fb_uid")
 		->and_where("name", "!=", "Netflix")
-		->group_by('fb_uid')->order_by('c', "DESC");
+		->group_by('name')->order_by('c', "DESC");
 		
 		$results = $query->execute($this->_db);
 		
 		$return = array();
+		
+		echo $query->__toString() . "<br><br>";
 		
 		foreach($results as $result){
 			echo "<pre>"; print_r($result); echo "</pre>";
