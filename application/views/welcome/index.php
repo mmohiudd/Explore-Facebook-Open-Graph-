@@ -69,7 +69,7 @@
 	 
   <div id="container">
     <header>
-		<h1><img src="http://bnotions.com/assets/BNOTIONS_logo_full.png" alt="bnotions logo " /></h1>
+		<h1><img src="http://bnotions.com/assets/BNOTIONS_logo_full.png" alt="bnotions logo " width="304"/></h1>
     </header>
     <div id="main" role="main">
         <!-- POST-LIKE -->
