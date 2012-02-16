@@ -29,30 +29,41 @@
 		</header>
 	
 		<section id="ctas">
-			<h1>Total auths: <?php echo $total_auths?></h1>
-			<h1>Total Netflix users: <?php echo $total_netflix_users?></h1>
-			<h1>Last movie(s) watched:<br>
-				<ul>
-				<?php
-				$i=0;
-				foreach($last_movies_watched as $movie) {
-					echo "<li>" . $movie['name'] . "</li>";
-					if(++$i==5){
-						break;	
+			<p>
+				<h1>Total auths: <?php echo $total_auths?></h1>
+			</p>
+			
+			<p>	
+				<h1>Total Netflix users: <?php echo $total_netflix_users?></h1>
+			</p>
+			
+			<p>
+				<h1>Last movie(s) watched:<br>
+					<ul>
+					<?php
+					$i=0;
+					foreach($last_movies_watched as $movie) {
+						echo "<li>" . $movie['name'] . "</li>";
+						if(++$i==5){
+							break;	
+						}
 					}
-				}
-				?>
-				</ul>
-			</h1>
-			<h1>Most popular:<br>
-				<ol>
-				<?php
-				for($i=0;$i<5; $i++) {
-					echo "<li>" . $most_popular_video[$i]['name'] . "</li>";
-				}
-				?>
-				</ol>
-			</h1>
+					?>
+					</ul>
+				</h1>
+			</p>
+			
+			<p>
+				<h1>Most popular:<br>
+					<ol>
+					<?php
+					for($i=0;$i<5; $i++) {
+						echo "<li>" . $most_popular_video[$i]['name'] . "</li>";
+					}
+					?>
+					</ol>
+				</h1>
+			</p>
 		</section>
 		
 		<footer>
