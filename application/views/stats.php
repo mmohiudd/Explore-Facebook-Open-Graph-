@@ -34,14 +34,14 @@
 			<h1>Last movie(s) watched:<br>
 			<?php
 			for($i=0;$i<5; $i++) {
-				echo $last_movies_watched['name'] . "<br>";
+				echo $last_movies_watched[$i]['name'] . "<br>";
 			}
 			?>
 			</h1>
 			<h1>Most popular:<br>
 			<?php
 			for($i=0;$i<5; $i++) {
-				echo $most_popular_video['name'] . "<br>";
+				echo $most_popular_video[$i]['name'] . "<br>";
 			}
 			?>
 			</h1>
