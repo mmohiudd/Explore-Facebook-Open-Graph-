@@ -62,8 +62,6 @@ class Model_Stats extends Model_Database {
 				
 			}
 		}
-
-		echo "<pre>"; print_r($return); echo "</pre>";
 		
 		return $return;
 	}

@@ -31,6 +31,20 @@
 		<section id="ctas">
 			<h1>Total auths: <?php echo $total_auths?></h1>
 			<h1>Total Netflix users: <?php echo $total_netflix_users?></h1>
+			<h1>Last movie(s) watched:<br>
+			<?php
+			for($i=0;$i<5; $i++) {
+				echo $last_movies_watched['name'] . "<br>";
+			}
+			?>
+			</h1>
+			<h1>Most popular:<br>
+			<?php
+			for($i=0;$i<5; $i++) {
+				echo $most_popular_video['name'] . "<br>";
+			}
+			?>
+			</h1>
 		</section>
 		
 		<footer>
