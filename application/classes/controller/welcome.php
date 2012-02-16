@@ -15,21 +15,6 @@ class Controller_Welcome extends Controller_Grandma_Base{
 		$this->fb_users = ORM::factory("fb_users");
 	}
 
-
-	public function action_graph(){
-		$this->stats = new Model_Stats();
-		$results = $this->stats->auths();
-		
-		echo "<pre>"; print_r($results); echo "</pre>";
-		$view = View::factory('welcome/graph');
-		
-		// Render the view
-		$page = $view->render()	;
-		
-		$this->response->body($page);
-	}
-	
-
 	public function action_index() {
 		$facebook_config = Kohana::$config->load('facebook')->{Kohana::$environment};
 		
@@ -143,6 +128,7 @@ class Controller_Welcome extends Controller_Grandma_Base{
 	function after(){
 		unset($this->fb_users);
 		unset($this->fb_feeds);
+		unset($this->fb_videos);
 	}
 
 } // End Welcome
