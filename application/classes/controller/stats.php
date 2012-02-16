@@ -29,8 +29,8 @@ class Controller_Stats extends Controller_Grandma_Base{
 		$view = View::factory('stats');
 		$view->bind('total_auths', $total_auths);
 		$view->bind('total_netflix_users', $total_netflix_users);
-		$view->bind('last_movies_watched', $last_movies_watched);
-		$view->bind('most_popular_video',  $most_popular_video);
+		$view->set('last_movies_watched', $last_movies_watched);
+		$view->set('most_popular_video',  $most_popular_video);
 		// Render the view
 		$page = $view->render()	;
 		
