@@ -51,6 +51,16 @@
     <header>
 		<h1><img src="http://bnotions.com/assets/BNOTIONS_logo_full.png" alt="bnotions logo " /></h1>
     </header>
+    
+	<!-- PRE-LIKE -->
+	<div id="enter">
+		<p>Enter the Lab</p>
+	    <div id="fb_like">
+	    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fbnotions.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+	    </div> <!-- FB LIKE -->
+	</div>
+
+    
     <div id="main" role="main">
         <!-- THANK YOU -->
         <div id="beaker">
@@ -71,7 +81,7 @@
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via ant build script-->
-  <script src="js/helper.js"></script>
+  <script src="<?php echo url::site()?>js/helper.js"></script>
   <!-- end scripts-->
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
