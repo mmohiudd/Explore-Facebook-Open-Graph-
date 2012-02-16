@@ -45,13 +45,13 @@
 				</ul>
 			</h1>
 			<h1>Most popular:<br>
-				<ul>
+				<ol>
 				<?php
 				for($i=0;$i<5; $i++) {
 					echo "<li>" . $most_popular_video[$i]['name'] . "</li>";
 				}
 				?>
-				</ul>
+				</ol>
 			</h1>
 		</section>
 		
