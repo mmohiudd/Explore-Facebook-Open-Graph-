@@ -75,7 +75,7 @@
         <!-- POST-LIKE -->
         <div id="start">
         	<p>Start the Experiment</p>
-            <div>
+            <div class="fb-login-button">
 		<a href="<?php echo $login_url?>"><img src="<?php echo url::site()?>img/facebook_connect.png" width="160" /></a>
 	    </div>
         </div>
