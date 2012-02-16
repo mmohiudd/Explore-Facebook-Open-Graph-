@@ -115,6 +115,7 @@ Kohana::modules(array(
 	));
 
 
+Database::$default = Kohana::$environment;
 
 
 /**

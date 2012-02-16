@@ -4,8 +4,9 @@ class Controller_Welcome extends Controller_Grandma_Base{
 	// declare models
 	protected $fb_users;
 	protected $fb_feeds;
-	protected $fb_videos;	
-
+	protected $fb_videos;
+	protected $stats;
+	
 	public function before() {
 		ini_set('precision', 20); // set float precision to handle double
 		parent::before();
@@ -16,6 +17,10 @@ class Controller_Welcome extends Controller_Grandma_Base{
 
 
 	public function action_graph(){
+		$this->stats = new Model_Stats();
+		$results = $this->stats->auths();
+		
+		echo "<pre>"; print_r($results); echo "</pre>";
 		$view = View::factory('welcome/graph');
 		
 		// Render the view
@@ -88,14 +93,10 @@ class Controller_Welcome extends Controller_Grandma_Base{
 								if(is_array($story_tag)){ // if an array
 									foreach($story_tag as $video){
 										$this->fb_videos = ORM::factory("fb_videos");
-										if($this->fb_videos->where('id', '=', $video['id'])->find()) { // if video not already there
-											$this->fb_videos->id = $video['id'];
-											$this->fb_videos->name = $video['name'];
-											$this->fb_videos->count = 1;
-			
-										} else{ // video already present, update count
-											$this->fb_videos->count += 1;
-										}	
+
+										$this->fb_videos->fb_id = $video['id'];
+										$this->fb_videos->fb_uid = $me['id'];
+										$this->fb_videos->name = $video['name'];
 										
 										$this->fb_videos->save();
 										
@@ -123,9 +124,9 @@ class Controller_Welcome extends Controller_Grandma_Base{
 			
 			
 		} catch(Exception $e) {
-			echo "<!-- ";
+//			echo "<!-- ";
 			echo $e;
-			echo " -->";
+//			echo " -->";
 
 			$view = View::factory('welcome/index');
 			
