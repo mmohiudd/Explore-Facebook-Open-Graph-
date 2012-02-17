@@ -37,7 +37,9 @@ class Model_Stats extends Model_Database {
 		
 		foreach($results as $result){
 			if(!array_key_exists($result['fb_uid'], $return)){
-				$return[$result['fb_uid']] = $result;
+				if(trim($result['fb_uid'])!=trim($result['fb_id'])){
+					$return[$result['fb_uid']] = $result;
+				}
 			}
 		}
 		
